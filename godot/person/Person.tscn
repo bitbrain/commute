@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://person/Person.gd" type="Script" id=2]
+
+[sub_resource type="Shader" id=6]
+code = "shader_type canvas_item;
+
+uniform float health;
+
+void fragment() {
+	vec4 tex = texture(TEXTURE, UV);
+	if (tex.a == 0.0) {
+		return;
+	}
+	vec4 healthy = vec4(0.0, 1.0, 0.0, 1.0);
+	vec4 unhealthy = vec4(1.0, 0.0, 0.0, 1.0);
+	float factor = health / 100.0;
+	tex.r = mix(unhealthy.r, healthy.r, factor);
+	tex.g = mix(unhealthy.g, healthy.g, factor);
+	tex.b = mix(unhealthy.b, healthy.b, factor);
+	COLOR = tex;
+}
+"
+custom_defines = ""
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = SubResource( 6 )
+shader_param/health = null
+
+[sub_resource type="StreamTexture" id=8]
+load_path = "res://.import/person.png-265cad6775a5546160faa0b31e3440f8.stex"
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 30.1984
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 14.2307
+
+[node name="Person" type="KinematicBody2D"]
+script = ExtResource( 2 )
+health = 100.0
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 7 )
+texture = SubResource( 8 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="SpreadRadius" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 0.3
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
