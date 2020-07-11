@@ -8,21 +8,31 @@ export var MAX_SPEED = 70
 
 export var health = 100.0
 export var infected = false
+export var has_mask = true
+
+export(Vector2) var direction = Vector2.UP
 
 onready var sprite = $Sprite
+onready var face_mask = $FaceMask
 onready var animation_tree = $AnimationTree
 onready var animation_state = animation_tree.get("parameters/playback")
 
 var velocity = Vector2.ZERO
 var collisions = []
+var input_vector = Vector2.ZERO
 
 func _ready():
 	animation_tree.active = true
+	face_mask.visible = self.has_mask
 	#var material = sprite.material as ShaderMaterial
 	#material.set_shader_param("health", self.health)
 	#sprite.material = material.duplicate()
 	if infected:
 		$DeathTimer.start()
+	
+	animation_tree.set("parameters/Idle/blend_position", direction.normalized())
+	animation_tree.set("parameters/Walk/blend_position", direction.normalized())
+	
 		
 func _process(delta):
 	move_state(delta)
@@ -32,9 +42,6 @@ func _process(delta):
 	#		infect()
 
 func move_state(delta):
-	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
