@@ -16,7 +16,7 @@ var train_stop_position_x = 0.0
 
 func _ready():
 	train_stop_position_x = train.position.x
-	train.position.x = -MAX_TRAIN_DISTANCE
+	train.position.x = MAX_TRAIN_DISTANCE
 	train_arrive_tween.interpolate_property(train, "position:x", train.position.x, train_stop_position_x, TRAIN_TRAVEL_TIME, Tween.TRANS_CUBIC, Tween.EASE_OUT, TRAIN_AWAY_DELAY)
 	train_arrive_tween.start()
 	
@@ -32,13 +32,13 @@ func _process(delta):
 
 func _on_TrainArriveTween_tween_completed(object, key):
 	train_arrive_tween.stop_all()
-	train_leave_tween.interpolate_property(train, "position:x", train.position.x, MAX_TRAIN_DISTANCE, TRAIN_TRAVEL_TIME, Tween.TRANS_CUBIC, Tween.EASE_IN, TRAIN_WAIT_DELAY)
+	train_leave_tween.interpolate_property(train, "position:x", train.position.x, -MAX_TRAIN_DISTANCE, TRAIN_TRAVEL_TIME, Tween.TRANS_CUBIC, Tween.EASE_IN, TRAIN_WAIT_DELAY)
 	train_leave_tween.start()
 
 
 func _on_TrainLeaveTween_tween_completed(object, key):
 	train_leave_tween.stop_all()
-	train.position.x = -MAX_TRAIN_DISTANCE
+	train.position.x = MAX_TRAIN_DISTANCE
 	train_arrive_tween.interpolate_property(train, "position:x", train.position.x, train_stop_position_x, TRAIN_TRAVEL_TIME, Tween.TRANS_CUBIC, Tween.EASE_OUT, TRAIN_AWAY_DELAY)
 	train_arrive_tween.start()
 
