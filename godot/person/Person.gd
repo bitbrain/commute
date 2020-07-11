@@ -10,11 +10,14 @@ export var health = 100.0
 export var infected = false
 
 onready var sprite = $Sprite
+onready var animation_tree = $AnimationTree
+onready var animation_state = animation_tree.get("parameters/playback")
 
 var velocity = Vector2.ZERO
 var collisions = []
 
 func _ready():
+	animation_tree.active = true
 	#var material = sprite.material as ShaderMaterial
 	#material.set_shader_param("health", self.health)
 	#sprite.material = material.duplicate()
@@ -35,12 +38,12 @@ func move_state(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
-		#animation_tree.set("parameters/Idle/blend_position", input_vector)
+		animation_tree.set("parameters/Idle/blend_position", input_vector)
 		#animation_tree.set("parameters/Run/blend_position", input_vector)
-		#animation_state.travel("Run")
+		animation_state.travel("Run")
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 	else:
-		#animation_state.travel("Idle")
+		animation_state.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 
 	velocity = move_and_slide(velocity)
