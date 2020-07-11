@@ -3,7 +3,7 @@
 [ext_resource path="res://carriage/Carriage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://person/Person.tscn" type="PackedScene" id=2]
 
-[node name="World" type="Node2D"]
+[node name="Prototype" type="Node2D"]
 
 [node name="Carriage" parent="." instance=ExtResource( 1 )]
 
