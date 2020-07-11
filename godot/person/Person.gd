@@ -39,8 +39,8 @@ func move_state(delta):
 	
 	if input_vector != Vector2.ZERO:
 		animation_tree.set("parameters/Idle/blend_position", input_vector)
-		#animation_tree.set("parameters/Run/blend_position", input_vector)
-		animation_state.travel("Run")
+		animation_tree.set("parameters/Walk/blend_position", input_vector)
+		animation_state.travel("Walk")
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 	else:
 		animation_state.travel("Idle")
