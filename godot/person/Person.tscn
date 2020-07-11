@@ -9,7 +9,7 @@
 radius = 30.1984
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 2.55449
+radius = 4.44374
 height = 8.65831
 
 [sub_resource type="Animation" id=3]
@@ -337,7 +337,7 @@ position = Vector2( -24.572, -33.5876 )
 shape = SubResource( 1 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 2.10699 )
+position = Vector2( 0, 1.69405 )
 rotation = 1.5708
 shape = SubResource( 2 )
 

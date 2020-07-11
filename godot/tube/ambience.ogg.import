@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ambience.ogg-4cdc71681adf9f296be032627439848a.oggstr"
+
+[deps]
+
+source_file="res://tube/ambience.ogg"
+dest_files=[ "res://.import/ambience.ogg-4cdc71681adf9f296be032627439848a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
