@@ -275,6 +275,7 @@ position = Vector2( 1394.29, -146.664 )
 
 [node name="TrainSounds" type="AudioStreamPlayer" parent="Objects/Train"]
 stream = ExtResource( 7 )
+volume_db = -15.0
 mix_target = 1
 
 [node name="TrainArriveTween" type="Tween" parent="Objects/Train"]
@@ -301,7 +302,7 @@ __meta__ = {
 
 [node name="ambience" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 8 )
-volume_db = -6.0
+volume_db = -20.0
 autoplay = true
 [connection signal="tween_completed" from="Objects/Train/TrainArriveTween" to="." method="_on_TrainArriveTween_tween_completed"]
 [connection signal="tween_started" from="Objects/Train/TrainArriveTween" to="." method="_on_TrainArriveTween_tween_started"]
