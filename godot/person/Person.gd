@@ -4,7 +4,7 @@ const HEALTH_INFECTION_THRESHOLD = 80.0
 
 export var ACCELERATION = 300
 export var FRICTION = 450
-export var MAX_SPEED = 70
+export var MAX_SPEED = 60
 
 export var health = 100.0
 export var infected = false
