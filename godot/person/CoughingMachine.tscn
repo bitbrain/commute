@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://misc/JukeBox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://person/coughing01.ogg" type="AudioStream" id=2]
+[ext_resource path="res://person/coughing02.ogg" type="AudioStream" id=3]
+[ext_resource path="res://person/coughing03.ogg" type="AudioStream" id=4]
+[ext_resource path="res://person/coughing04.ogg" type="AudioStream" id=5]
+[ext_resource path="res://person/coughing05.ogg" type="AudioStream" id=6]
+[ext_resource path="res://person/CoughingMachine.gd" type="Script" id=7]
+
+[node name="CoughingMachine" type="Node"]
+script = ExtResource( 7 )
+
+[node name="JukeBox" parent="." instance=ExtResource( 1 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="JukeBox"]
+stream = ExtResource( 2 )
+bus = "Ambience"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="JukeBox"]
+stream = ExtResource( 3 )
+bus = "Ambience"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="JukeBox"]
+stream = ExtResource( 4 )
+bus = "Ambience"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="JukeBox"]
+stream = ExtResource( 5 )
+bus = "Ambience"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="JukeBox"]
+stream = ExtResource( 6 )
+bus = "Ambience"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

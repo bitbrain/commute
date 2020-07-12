@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/coughing01.ogg-3f8ca25f684cf449314be74674a2e80b.oggstr"
+
+[deps]
+
+source_file="res://person/coughing01.ogg"
+dest_files=[ "res://.import/coughing01.ogg-3f8ca25f684cf449314be74674a2e80b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
