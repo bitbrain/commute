@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://UI.gd" type="Script" id=9]
 [ext_resource path="res://ui/InfectionBar.tscn" type="PackedScene" id=10]
 [ext_resource path="res://tube/train-sounds.ogg" type="AudioStream" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 760.483, 51.8882 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
@@ -36,7 +39,7 @@ __meta__ = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="Objects"]
-position = Vector2( -371.79, 655.467 )
+position = Vector2( -390.752, 648.013 )
 current = true
 smoothing_enabled = true
 smoothing_speed = 3.0
@@ -56,10 +59,17 @@ volume_db = -20.0
 [node name="People" type="YSort" parent="Objects"]
 
 [node name="Player" parent="Objects/People" instance=ExtResource( 2 )]
-position = Vector2( -371.79, 655.467 )
+position = Vector2( -390.752, 648.013 )
+
+[node name="Person" parent="Objects/People/Player" index="0"]
+collision_layer = 13
+collision_mask = 12
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Objects/People/Player/Person" index="7"]
 remote_path = NodePath("../../../../Camera2D")
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Pedestrian3" parent="Objects/People" instance=ExtResource( 6 )]
 position = Vector2( -187.917, 751.027 )
@@ -76,7 +86,7 @@ has_mask = false
 position = Vector2( 41.3242, 749.155 )
 
 [node name="Pedestrian11" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 177.937, 739.997 )
+position = Vector2( 245.743, 16.3838 )
 has_mask = false
 
 [node name="Pedestrian12" parent="Objects/People" instance=ExtResource( 6 )]
@@ -103,7 +113,7 @@ has_mask = false
 position = Vector2( 1177.16, 732.856 )
 
 [node name="Pedestrian18" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 394.328, 67.0373 )
+position = Vector2( 563.842, 118.951 )
 has_mask = false
 
 [node name="Pedestrian19" parent="Objects/People" instance=ExtResource( 6 )]
@@ -121,22 +131,22 @@ has_mask = false
 position = Vector2( 359.34, 748.78 )
 
 [node name="Pedestrian24" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 336.622, 674.39 )
+position = Vector2( 729.683, -19.5582 )
 
 [node name="Pedestrian25" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 304.55, 661.472 )
+position = Vector2( 453.934, -43.0709 )
 
 [node name="Pedestrian26" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 706.345, 706.017 )
+position = Vector2( 798.518, -0.644775 )
 
 [node name="Pedestrian27" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 871.607, 606.236 )
+position = Vector2( 939.412, -0.836243 )
 
 [node name="Pedestrian28" parent="Objects/People" instance=ExtResource( 6 )]
 position = Vector2( 998.115, 735.862 )
 
 [node name="Pedestrian23" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 469.84, 614.682 )
+position = Vector2( 1011.23, 27.7395 )
 has_mask = false
 
 [node name="Pedestrian" parent="Objects/People" instance=ExtResource( 6 )]
@@ -258,6 +268,14 @@ stream = ExtResource( 8 )
 volume_db = -20.0
 autoplay = true
 
+[node name="WinningArea" type="Area2D" parent="."]
+collision_layer = 12
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinningArea"]
+position = Vector2( 566.813, -36.0217 )
+shape = SubResource( 1 )
+
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource( 9 )
 
@@ -273,5 +291,6 @@ margin_bottom = 40.0
 [connection signal="tween_completed" from="Objects/Train/TrainLeaveTween" to="." method="_on_TrainLeaveTween_tween_completed"]
 [connection signal="on_health_percentage_changed" from="Objects/People/Player" to="UI" method="_on_Player_on_health_percentage_changed"]
 [connection signal="on_player_infected" from="Objects/People/Player" to="." method="_on_Player_on_player_infected"]
+[connection signal="body_entered" from="WinningArea" to="." method="_on_WinningArea_body_entered"]
 
 [editable path="Objects/People/Player"]

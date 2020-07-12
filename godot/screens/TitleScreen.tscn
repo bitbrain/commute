@@ -1,0 +1,174 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://screens/MenuScreen.gd" type="Script" id=1]
+[ext_resource path="res://Main.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/m23.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://TileSet.tres" type="TileSet" id=4]
+[ext_resource path="res://person/Person.tscn" type="PackedScene" id=5]
+[ext_resource path="res://tube/ambience.ogg" type="AudioStream" id=6]
+[ext_resource path="res://carriage/Train.tscn" type="PackedScene" id=7]
+[ext_resource path="res://misc/ambient.png" type="Texture" id=8]
+[ext_resource path="res://tube/train-sounds.ogg" type="AudioStream" id=9]
+[ext_resource path="res://carriage/TrainController.gd" type="Script" id=10]
+[ext_resource path="res://ui/info_label.gd" type="Script" id=11]
+[ext_resource path="res://screens/Overlay.gd" type="Script" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 8
+outline_color = Color( 0.870588, 0.866667, 0.788235, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 8
+font_data = ExtResource( 3 )
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 1 )
+colors = PoolColorArray( 0.0313726, 0.0431373, 0.0313726, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+target_scene = ExtResource( 2 )
+
+[node name="TrainController" type="Node" parent="."]
+script = ExtResource( 10 )
+train_path = NodePath("../YSort/Train")
+
+[node name="TrainSounds" type="AudioStreamPlayer" parent="TrainController"]
+stream = ExtResource( 9 )
+volume_db = -20.0
+
+[node name="TrainArriveTween" type="Tween" parent="TrainController"]
+
+[node name="TrainLeaveTween" type="Tween" parent="TrainController"]
+
+[node name="Background" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -327670, 9, 0, -327665, 9, 0, -327664, 9, 0, -262138, 9, 0, -262137, 9, 0, -262136, 9, 0, -262135, 9, 0, -262134, 9, 0, -262133, 9, 0, -262132, 9, 0, -262131, 9, 0, -262130, 9, 0, -262129, 9, 0, -131081, 9, 0, -131080, 9, 0, -131079, 9, 0, -131078, 9, 0, -131077, 9, 0, -131076, 9, 0, -131075, 9, 0, -131074, 9, 0, -131073, 9, 0, -196608, 9, 0, -196607, 9, 0, -196606, 9, 0, -196605, 9, 0, -196604, 9, 0, -196603, 9, 0, -196602, 9, 0, -196601, 9, 0, -196600, 9, 0, -196599, 9, 0, -196598, 9, 0, -196597, 9, 0, -196596, 9, 0, -196595, 9, 0, -196594, 9, 0, -196593, 9, 0, -196592, 9, 0, -196591, 9, 0, -196590, 9, 0, -196589, 9, 0, -65544, 9, 0, -65543, 9, 0, -65542, 9, 0, -65541, 9, 0, -65540, 9, 0, -65539, 9, 0, -65538, 9, 0, -65537, 9, 0, -131072, 9, 0, -131071, 9, 0, -131070, 9, 0, -131069, 9, 0, -131068, 9, 0, -131067, 9, 0, -131066, 9, 0, -131065, 9, 0, -131064, 9, 0, -131063, 9, 0, -131062, 9, 0, -131061, 9, 0, -131060, 9, 0, -131059, 9, 0, -131058, 9, 0, -131057, 9, 0, -131056, 9, 0, -131055, 9, 0, -131054, 9, 0, -131053, 9, 0, -131052, 9, 0, -131051, 9, 0, -131050, 9, 0, -7, 9, 0, -6, 9, 0, -5, 9, 0, -4, 9, 0, -3, 9, 0, -2, 9, 0, -1, 9, 0, -65536, 9, 0, -65535, 9, 0, -65534, 9, 0, -65533, 9, 0, -65532, 9, 0, -65531, 9, 0, -65530, 9, 0, -65529, 9, 0, -65528, 9, 0, -65527, 9, 0, -65526, 9, 0, -65525, 9, 0, -65524, 9, 0, -65523, 9, 0, -65522, 9, 0, -65521, 9, 0, -65520, 9, 0, -65519, 9, 0, -65518, 9, 0, -65517, 9, 0, -65516, 9, 0, -65515, 9, 0, -65514, 9, 0, -65513, 9, 0, -65512, 9, 0, -65511, 9, 0, 65531, 9, 0, 65532, 9, 0, 65533, 9, 0, 65534, 9, 0, 65535, 9, 0, 0, 9, 0, 1, 9, 0, 2, 9, 0, 3, 9, 0, 4, 9, 0, 5, 9, 0, 6, 9, 0, 7, 9, 0, 8, 9, 0, 9, 9, 0, 10, 9, 0, 11, 9, 0, 12, 9, 0, 13, 9, 0, 14, 9, 0, 15, 9, 0, 16, 9, 0, 17, 9, 0, 18, 9, 0, 19, 9, 0, 20, 9, 0, 21, 9, 0, 131062, 9, 0, 131063, 9, 0, 131064, 9, 0, 131065, 9, 0, 131066, 9, 0, 131067, 9, 0, 131068, 9, 0, 131069, 9, 0, 131070, 9, 0, 131071, 9, 0, 65536, 9, 0, 65537, 9, 0, 65538, 9, 0, 65539, 9, 0, 65540, 9, 0, 65541, 9, 0, 65542, 9, 0, 65543, 9, 0, 65544, 9, 0, 65545, 9, 0, 65546, 9, 0, 65547, 9, 0, 65548, 9, 0, 65549, 9, 0, 65550, 9, 0, 65551, 9, 0, 65552, 9, 0, 65553, 9, 0, 65554, 9, 0, 65555, 9, 0, 65556, 9, 0, 65557, 9, 0, 65558, 9, 0, 65559, 9, 0, 65560, 9, 0, 65561, 9, 0, 65562, 9, 0, 65563, 9, 0, 65564, 9, 0, 196601, 9, 0, 196602, 9, 0, 196603, 9, 0, 196604, 9, 0, 196605, 9, 0, 196606, 9, 0, 196607, 9, 0, 131072, 9, 0, 131073, 9, 0, 131074, 9, 0, 131075, 9, 0, 131076, 9, 0, 131077, 9, 0, 131078, 9, 0, 131079, 9, 0, 131080, 9, 0, 131081, 9, 0, 131082, 9, 0, 131083, 9, 0, 131084, 9, 0, 131085, 9, 0, 131086, 9, 0, 131087, 9, 0, 131088, 9, 0, 131089, 9, 0, 131090, 9, 0, 131091, 9, 0, 131092, 9, 0, 131093, 9, 0, 131094, 9, 0, 131095, 9, 0, 131096, 9, 0, 131097, 9, 0, 131098, 9, 0, 131099, 9, 0, 262136, 9, 0, 262137, 9, 0, 262138, 9, 0, 262139, 9, 0, 262140, 9, 0, 262141, 9, 0, 262142, 9, 0, 262143, 9, 0, 196608, 9, 0, 196609, 9, 0, 196610, 9, 0, 196611, 9, 0, 196612, 9, 0, 196613, 9, 0, 196614, 9, 0, 196615, 9, 0, 196616, 9, 0, 196617, 9, 0, 196618, 9, 0, 196619, 9, 0, 196620, 9, 0, 196621, 9, 0, 196622, 9, 0, 196623, 9, 0, 196624, 9, 0, 196625, 9, 0, 196626, 9, 0, 196627, 9, 0, 196628, 9, 0, 196629, 9, 0, 196630, 9, 0, 196631, 9, 0, 196632, 9, 0, 196633, 9, 0, 196634, 9, 0, 327674, 9, 0, 327675, 9, 0, 327676, 9, 0, 327677, 9, 0, 327678, 9, 0, 327679, 9, 0, 262144, 9, 0, 262145, 9, 0, 262146, 9, 0, 262147, 9, 0, 262148, 9, 0, 262149, 9, 0, 262150, 9, 0, 262151, 9, 0, 262152, 9, 0, 262153, 9, 0, 262154, 9, 0, 262155, 9, 0, 262156, 9, 0, 262157, 9, 0, 262158, 9, 0, 262159, 9, 0, 262160, 9, 0, 262161, 9, 0, 262162, 9, 0, 262163, 9, 0, 262164, 9, 0, 262165, 9, 0, 262166, 9, 0, 262167, 9, 0, 262168, 9, 0, 262169, 9, 0, 393211, 8, 0, 393212, 8, 0, 393213, 8, 0, 393214, 8, 0, 393215, 8, 0, 327680, 8, 0, 327681, 8, 0, 327682, 8, 0, 327683, 8, 0, 327684, 8, 0, 327685, 8, 0, 327686, 8, 0, 327687, 8, 0, 327688, 8, 0, 327689, 8, 0, 327690, 8, 0, 327691, 8, 0, 327692, 8, 0, 327693, 8, 0, 327694, 8, 0, 327695, 8, 0, 327696, 8, 0, 327697, 8, 0, 327698, 8, 0, 327699, 8, 0, 327700, 8, 0, 327701, 8, 0, 327702, 8, 0, 458747, 7, 0, 458748, 7, 0, 458749, 7, 0, 458750, 7, 0, 458751, 7, 0, 393216, 7, 0, 393217, 7, 0, 393218, 7, 0, 393219, 7, 0, 393220, 7, 0, 393221, 7, 0, 393222, 7, 0, 393223, 7, 0, 393224, 7, 0, 393225, 7, 0, 393226, 7, 0, 393227, 7, 0, 393228, 7, 0, 393229, 7, 0, 393230, 7, 0, 393231, 7, 0, 393232, 7, 0, 393233, 7, 0, 393234, 7, 0, 393235, 7, 0, 393236, 7, 0, 393237, 7, 0, 393238, 7, 0, 524283, 6, 0, 524284, 6, 0, 524285, 6, 0, 524286, 6, 0, 524287, 6, 0, 458752, 6, 0, 458753, 6, 0, 458754, 6, 0, 458755, 6, 0, 458756, 6, 0, 458757, 6, 0, 458758, 6, 0, 458759, 6, 0, 458760, 6, 0, 458761, 6, 0, 458762, 6, 0, 458763, 6, 0, 458764, 6, 0, 458765, 6, 0, 458766, 6, 0, 458767, 6, 0, 458768, 6, 0, 458769, 6, 0, 458770, 6, 0, 458771, 6, 0, 458772, 6, 0, 458773, 6, 0, 458774, 6, 0, 589819, 1, 0, 589820, 1, 0, 589821, 1, 0, 589822, 1, 0, 589823, 1, 0, 524288, 1, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 524306, 1, 0, 524307, 1, 0, 524308, 1, 0, 524309, 1, 0, 524310, 1, 0, 655355, 0, 0, 655356, 0, 0, 655357, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 720891, 0, 0, 720892, 0, 0, 720893, 0, 0, 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 786427, 0, 0, 786428, 0, 0, 786429, 0, 0, 786430, 0, 0, 786431, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0 )
+
+[node name="BackgroundSounds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -20.0
+autoplay = true
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Person" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 77.4618, 277.561 )
+has_mask = false
+
+[node name="Person2" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 103.215, 298.898 )
+
+[node name="Person3" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 125.604, 273.777 )
+direction = Vector2( 1, 0 )
+
+[node name="Person4" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 461.331, 304.47 )
+
+[node name="Person5" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 498.751, 277.561 )
+direction = Vector2( 1, 0 )
+
+[node name="Person6" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 359.583, 278.402 )
+direction = Vector2( -1, 0 )
+
+[node name="Train" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 457.587, 238.202 )
+
+[node name="AmbientLight" type="Light2D" parent="."]
+position = Vector2( 299.828, 172.692 )
+scale = Vector2( 4.73295, 2.55609 )
+texture = ExtResource( 8 )
+energy = 0.7
+mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="CanvasLayer"]
+margin_left = 2.26135
+margin_top = -11.8742
+margin_right = 578.261
+margin_bottom = 113.126
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.160784, 0.160784, 1 )
+text = "The Commute"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Press Key" type="Label" parent="CanvasLayer"]
+margin_left = 1.03961
+margin_top = 89.1165
+margin_right = 577.04
+margin_bottom = 105.117
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.219608, 0.282353, 0.219608, 1 )
+text = "press ENTER to play"
+align = 1
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FadeInTween" type="Tween" parent="CanvasLayer/Press Key"]
+
+[node name="FadeOutTween" type="Tween" parent="CanvasLayer/Press Key"]
+
+[node name="Credits" type="Label" parent="CanvasLayer"]
+margin_left = 0.123718
+margin_top = 311.986
+margin_right = 1155.12
+margin_bottom = 325.986
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.643137, 0.666667, 0.643137, 0.160784 )
+text = "developed by bitbrain  in 48 hours for GameDev London Summer Jam 2020"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Overlay" type="TextureRect" parent="CanvasLayer"]
+visible = false
+margin_left = -33.0
+margin_top = -40.0
+margin_right = 627.0
+margin_bottom = 355.0
+texture = SubResource( 4 )
+expand = true
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FadeInTween" type="Tween" parent="CanvasLayer/Overlay"]
+[connection signal="tween_completed" from="TrainController/TrainArriveTween" to="TrainController" method="_on_TrainArriveTween_tween_completed"]
+[connection signal="tween_started" from="TrainController/TrainArriveTween" to="TrainController" method="_on_TrainArriveTween_tween_started"]
+[connection signal="tween_completed" from="TrainController/TrainLeaveTween" to="TrainController" method="_on_TrainLeaveTween_tween_completed"]
+[connection signal="tween_completed" from="CanvasLayer/Press Key/FadeInTween" to="CanvasLayer/Press Key" method="_on_FadeInTween_tween_completed"]
+[connection signal="tween_completed" from="CanvasLayer/Press Key/FadeOutTween" to="CanvasLayer/Press Key" method="_on_FadeOutTween_tween_completed"]
+[connection signal="tween_completed" from="CanvasLayer/Overlay/FadeInTween" to="CanvasLayer/Overlay" method="_on_FadeInTween_tween_completed"]
