@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,61 @@
 [ext_resource path="res://ui/InfectionBar.tscn" type="PackedScene" id=10]
 [ext_resource path="res://tube/train-sounds.ogg" type="AudioStream" id=11]
 [ext_resource path="res://music/commute-ost.ogg" type="AudioStream" id=12]
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 129.31, -11.5909, 0, 0, 0, 0, 154.323, -75.7744, 0, 0, 0, 0, 103.826, -53.3574, 0, 0, 0, 0, -93.9161, -54.0653 )
+}
+
+[sub_resource type="Curve2D" id=8]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -37.5558, -1.29095, 0, 0, 0, 0, 177.691, -50.9403, 0, 0, 0, 0, -49.4479, -55.3999, 0, 0, 0, 0, 169.366, 17.7363, 0, 0, 0, 0, 218.124, -132.104 )
+}
+
+[sub_resource type="Curve2D" id=7]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -202.839, -10.3422, 0, 0, 0, 0, 52.2456, -13.0179, 0, 0, 0, 0, -205.812, 35.7396, 0, 0, 0, 0, 4.81128, -29.8605 )
+}
+
+[sub_resource type="Curve2D" id=9]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -2.97131, 9.16476, 0, 0, 0, 0, 0.672607, 227.678, 0, 0, 0, 0, -28.5874, 54.005, 0, 0, 0, 0, -23.8682, -332.983, 0, 0, 0, 0, -116.368, -433.034, 0, 0, 0, 0, -317.413, -438.697 )
+}
+
+[sub_resource type="Curve2D" id=10]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -248.86, -26.2236, 0, 0, 0, 0, -51.5255, -11.9692, 0, 0, 0, 0, 27.7644, -74.3321, 0, 0, 0, 0, -145.961, -148.722, 0, 0, 0, 0, -482.275, -140.259, 0, 0, 0, 0, -701.603, -19.9218, 0, 0, 0, 0, -883.032, -141.504, 0, 0, 0, 0, -1173.44, -141.504 )
+}
+
+[sub_resource type="Curve2D" id=6]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 63.9604, -4.54834, 0, 0, 0, 0, -6.91016, 56.8728, 0, 0, 0, 0, 37.5021, 148.217, 0, 0, 0, 0, 91.9937, 74.5117, 0, 0, 0, 0, 66.7952, 1.12134 )
+}
+
+[sub_resource type="Curve2D" id=5]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -37.1483, 49.3133, 0, 0, 0, 0, -9.42999, 3.95612, 0, 0, 0, 0, 22.698, 50.8882, 0, 0, 0, 0, 8.20889, 150.422, 0, 0, 0, 0, -28.6438, 69.787, 0, 0, 0, 0, 5.77866, -16.7082 )
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 59.7106, 4.47083, 0, 0, 0, 0, 60.8998, -89.7738, 0, 0, 0, 0, 97.7653, -70.1519, 0, 0, 0, 0, 17.4938, 79.6882, 0, 0, 0, 0, 124.522, 77.9044, 0, 0, 0, 0, -251.517, 68.2764 )
+}
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -86.2172, -0.40033, 0, 0, 0, 0, 53.2173, 0.788879, 0, 0, 0, 0, 56.785, -56.8877, 0, 0, 0, 0, -203.651, -59.2661, 0, 0, 0, 0, -185.219, 64.4114, 0, 0, 0, 0, 39.2442, 59.06 )
+}
+
+[sub_resource type="Curve2D" id=11]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 142, -165.5, 0, 0, 0, 0, 377, -129.5, 0, 0, 0, 0, 618.5, -154, 0, 0, 0, 0, 756, 9.5, 0, 0, 0, 0, 244, -16.5, 0, 0, 0, 0, -164, -158.5 )
+}
+
+[sub_resource type="Curve2D" id=12]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -90, 61, 0, 0, 0, 0, 189, 165, 0, 0, 0, 0, 523, 82, 0, 0, 0, 0, 860, 23, 0, 0, 0, 0, 1176, 10, 0, 0, 0, 0, 1170, 279.5 )
+}
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 760.483, 51.8882 )
@@ -46,7 +101,7 @@ smoothing_enabled = true
 smoothing_speed = 3.0
 
 [node name="Train" parent="Objects" instance=ExtResource( 7 )]
-position = Vector2( -331.166, 834.358 )
+position = Vector2( -331.696, 834.358 )
 scale = Vector2( -1, 1 )
 
 [node name="TrainArriveTween" type="Tween" parent="Objects/Train"]
@@ -73,86 +128,167 @@ __meta__ = {
 }
 
 [node name="Pedestrian3" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( -187.917, 751.027 )
+position = Vector2( -187.917, 750.555 )
+path_resource = NodePath("Path2D")
 
-[node name="Pedestrian5" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 561.197, 733.307 )
-has_mask = false
-
-[node name="Pedestrian6" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( -14.8866, 603.021 )
-has_mask = false
-
-[node name="Pedestrian10" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 41.3242, 749.155 )
-
-[node name="Pedestrian11" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 245.743, 16.3838 )
-has_mask = false
-
-[node name="Pedestrian12" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 1096.41, -11.83 )
-has_mask = false
-
-[node name="Pedestrian13" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 108.748, 742.412 )
-has_mask = false
-
-[node name="Pedestrian14" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 203.141, 588.836 )
-has_mask = false
-
-[node name="Pedestrian15" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 1227.15, -12.8548 )
-has_mask = false
-
-[node name="Pedestrian16" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 1283.37, 720.17 )
-has_mask = false
-
-[node name="Pedestrian17" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 1177.16, 732.856 )
-
-[node name="Pedestrian18" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 563.842, 118.951 )
-has_mask = false
-
-[node name="Pedestrian19" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 1012.18, 625.384 )
-has_mask = false
-
-[node name="Pedestrian20" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 842.577, 730.288 )
-
-[node name="Pedestrian21" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 708.938, 598.08 )
-has_mask = false
-
-[node name="Pedestrian22" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 359.34, 748.78 )
-
-[node name="Pedestrian24" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 729.683, -19.5582 )
-
-[node name="Pedestrian25" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 453.934, -43.0709 )
-
-[node name="Pedestrian26" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 798.518, -0.644775 )
-
-[node name="Pedestrian27" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 939.412, -0.836243 )
-
-[node name="Pedestrian28" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 998.115, 735.862 )
-
-[node name="Pedestrian23" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 1011.23, 27.7395 )
-has_mask = false
+[node name="Path2D" type="Path2D" parent="Objects/People/Pedestrian3"]
+curve = SubResource( 2 )
 
 [node name="Pedestrian" parent="Objects/People" instance=ExtResource( 6 )]
 position = Vector2( -164.675, 621.495 )
+has_mask = false
+
+[node name="Pedestrian5" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 344.474, 695.885 )
+
+[node name="Pedestrian9" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 759.609, 716.909 )
+has_mask = false
+path_resource = NodePath("Path2D")
+
+[node name="Path2D" type="Path2D" parent="Objects/People/Pedestrian9"]
+curve = SubResource( 8 )
+
+[node name="Pedestrian10" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 914.784, 609.12 )
+has_mask = false
+path_resource = NodePath("Path2D")
+
+[node name="Path2D" type="Path2D" parent="Objects/People/Pedestrian10"]
+curve = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pedestrian11" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 961.606, 737.975 )
+
+[node name="Pedestrian12" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 1020.79, 736.851 )
+
+[node name="Pedestrian13" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 1137.07, 609.462 )
+has_mask = false
+
+[node name="Pedestrian22" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 1200.37, 475.44 )
+has_mask = false
+path_resource = NodePath("Path2D")
+
+[node name="Path2D" type="Path2D" parent="Objects/People/Pedestrian22"]
+curve = SubResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pedestrian14" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 1183.5, 658.672 )
 infected = false
+
+[node name="Pedestrian15" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 546.779, 749.774 )
+infected = false
+
+[node name="Pedestrian16" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 855.668, 642.443 )
+infected = false
+
+[node name="Pedestrian17" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 626.536, 745.436 )
+infected = false
+
+[node name="Pedestrian18" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 399.947, 715.402 )
+infected = false
+
+[node name="Pedestrian19" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 301.502, 742.433 )
+infected = false
+
+[node name="Pedestrian20" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 710.297, 629.639 )
+infected = false
+
+[node name="Pedestrian21" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 1294.96, 603.609 )
+infected = false
+
+[node name="Pedestrian23" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 1279.88, 105.562 )
+has_mask = false
+path_resource = NodePath("Path2D")
+
+[node name="Path2D" type="Path2D" parent="Objects/People/Pedestrian23"]
+curve = SubResource( 10 )
+
+[node name="Pedestrian6" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 549.61, 592.139 )
+has_mask = false
+path_resource = NodePath("Path2D")
+
+[node name="Path2D" type="Path2D" parent="Objects/People/Pedestrian6"]
+curve = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pedestrian7" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 487.721, 600.857 )
+has_mask = false
+path_resource = NodePath("Path2D")
+
+[node name="Path2D" type="Path2D" parent="Objects/People/Pedestrian7"]
+curve = SubResource( 5 )
+
+[node name="Pedestrian8" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 661.974, 583.678 )
+has_mask = false
+path_resource = NodePath("Path2D")
+
+[node name="Path2D" type="Path2D" parent="Objects/People/Pedestrian8"]
+curve = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pedestrian2" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 63.3554, 677.685 )
+has_mask = false
+path_resource = NodePath("Path2D")
+
+[node name="Path2D" type="Path2D" parent="Objects/People/Pedestrian2"]
+curve = SubResource( 3 )
+
+[node name="Path2D2" type="Path2D" parent="Objects/People/Pedestrian2"]
+curve = SubResource( 3 )
+
+[node name="Pedestrian4" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 265.818, 659.847 )
+has_mask = false
+path_resource = NodePath("Path2D")
+
+[node name="Path2D" type="Path2D" parent="Objects/People/Pedestrian4"]
+curve = SubResource( 4 )
+
+[node name="Pedestrian24" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 103, 105 )
+path_resource = NodePath("Path2D")
+
+[node name="Path2D" type="Path2D" parent="Objects/People/Pedestrian24"]
+curve = SubResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pedestrian25" parent="Objects/People" instance=ExtResource( 6 )]
+position = Vector2( 51, -44.5 )
+path_resource = NodePath("Path2D")
+
+[node name="Path2D" type="Path2D" parent="Objects/People/Pedestrian25"]
+curve = SubResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Lights" type="YSort" parent="Objects"]
 __meta__ = {
@@ -281,6 +417,9 @@ collision_mask = 12
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinningArea"]
 position = Vector2( 566.813, -36.0217 )
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource( 9 )
