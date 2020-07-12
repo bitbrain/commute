@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://screens/MenuScreen.gd" type="Script" id=1]
 [ext_resource path="res://Main.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://carriage/TrainController.gd" type="Script" id=10]
 [ext_resource path="res://ui/info_label.gd" type="Script" id=11]
 [ext_resource path="res://screens/Overlay.gd" type="Script" id=12]
+[ext_resource path="res://music/commute-ost.ogg" type="AudioStream" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -166,6 +167,11 @@ __meta__ = {
 }
 
 [node name="FadeInTween" type="Tween" parent="CanvasLayer/Overlay"]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -20.0
+autoplay = true
 [connection signal="tween_completed" from="TrainController/TrainArriveTween" to="TrainController" method="_on_TrainArriveTween_tween_completed"]
 [connection signal="tween_started" from="TrainController/TrainArriveTween" to="TrainController" method="_on_TrainArriveTween_tween_started"]
 [connection signal="tween_completed" from="TrainController/TrainLeaveTween" to="TrainController" method="_on_TrainLeaveTween_tween_completed"]

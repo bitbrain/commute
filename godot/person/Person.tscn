@@ -7,7 +7,7 @@
 [ext_resource path="res://misc/light.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 38.8336
+radius = 33.7123
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 4.44374
@@ -367,9 +367,6 @@ collision_mask = 2
 [node name="SpreadRadius" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -24.572, -33.5876 )
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1.69405 )

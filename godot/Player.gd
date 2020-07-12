@@ -1,4 +1,4 @@
-extends Node2D
+extends YSort
 
 export(float) var max_health = 100.0
 export(float) var base_damage = 5.0
@@ -47,4 +47,4 @@ func _on_InfectionTimer_timeout():
 	for close_person in close_persons:
 		if close_person.is_infected() && !close_person.has_mask():
 			var distance = person.global_position.distance_to(close_person.global_position)
-			reduce_health(500.0 / distance)
+			reduce_health(600.0 / distance)
