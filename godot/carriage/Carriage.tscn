@@ -7,6 +7,7 @@
 [node name="Carriage" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.561218, -67.909 )
 texture = ExtResource( 1 )
 vframes = 2
 __meta__ = {
@@ -14,22 +15,28 @@ __meta__ = {
 }
 
 [node name="BigWindowLight" type="Light2D" parent="."]
-position = Vector2( -0.00177002, 19.989 )
+position = Vector2( 0.551857, -47.9065 )
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="DoorLightLeft" type="Light2D" parent="."]
-position = Vector2( -100.496, 22.0067 )
+position = Vector2( -99.9424, -45.8888 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="DoorLightRight" type="Light2D" parent="."]
-position = Vector2( 87.5101, 22.0159 )
+position = Vector2( 88.0637, -45.8796 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="EnterPositionA" type="Position2D" parent="."]
-position = Vector2( -95.1239, 62.3411 )
+position = Vector2( -95.4985, -9.95222 )
 
 [node name="EnterPositionB" type="Position2D" parent="."]
-position = Vector2( 93.0885, 62.1742 )
+position = Vector2( 92.7139, -10.1191 )

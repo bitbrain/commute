@@ -2,7 +2,8 @@ extends Node2D
 
 const MAX_TRAIN_DISTANCE = 10000
 const TRAIN_WAIT_DELAY = 7.0
-const TRAIN_AWAY_DELAY = 30.0
+const INITIAL_TRAIN_ARRIVAL_TIME = 20.0
+const TRAIN_AWAY_DELAY = 60.0
 const TRAIN_TRAVEL_TIME = 13.0
 
 onready var player = $Objects/People/Player
@@ -17,7 +18,7 @@ var train_stop_position_x = 0.0
 func _ready():
 	train_stop_position_x = train.position.x
 	train.position.x = MAX_TRAIN_DISTANCE
-	train_arrive_tween.interpolate_property(train, "position:x", train.position.x, train_stop_position_x, TRAIN_TRAVEL_TIME, Tween.TRANS_CUBIC, Tween.EASE_OUT, TRAIN_AWAY_DELAY)
+	train_arrive_tween.interpolate_property(train, "position:x", train.position.x, train_stop_position_x, TRAIN_TRAVEL_TIME, Tween.TRANS_CUBIC, Tween.EASE_OUT, INITIAL_TRAIN_ARRIVAL_TIME)
 	train_arrive_tween.start()
 	
 
