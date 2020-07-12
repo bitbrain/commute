@@ -42,3 +42,7 @@ func _on_TrainLeaveTween_tween_completed(object, key):
 
 func _on_TrainArriveTween_tween_started(object, key):
 	train_sounds.play()
+
+
+func _on_Player_on_player_infected():
+	player.reset()

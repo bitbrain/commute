@@ -1,6 +1,7 @@
 extends Node2D
 
 export(float) var max_health = 100.0
+export(float) var base_damage = 5.0
 
 signal on_health_percentage_changed(health_percentage)
 signal on_player_infected()
@@ -44,4 +45,6 @@ func _on_Area2D_area_exited(area):
 
 func _on_InfectionTimer_timeout():
 	for close_person in close_persons:
-		self.health -= 5.0
+		if close_person.is_infected() && !close_person.has_mask():
+			var distance = person.global_position.distance_to(close_person.global_position)
+			reduce_health(500.0 / distance)

@@ -7,6 +7,7 @@ enum {
 
 export var min_target_range = 16.0
 export var has_mask = true
+export var infected = true
 
 onready var wandererController = $Person/WandererController
 onready var state = IDLE
@@ -15,6 +16,7 @@ onready var person = $Person
 func _ready():
 	randomize()
 	person.has_mask = has_mask
+	person.infected = infected
 	wandererController.update_target_position()
 	next_state()
 	

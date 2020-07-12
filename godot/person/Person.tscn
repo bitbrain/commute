@@ -1,12 +1,13 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://person/person.png" type="Texture" id=1]
 [ext_resource path="res://person/Person.gd" type="Script" id=2]
 [ext_resource path="res://misc/shadows.png" type="Texture" id=3]
 [ext_resource path="res://person/mask.png" type="Texture" id=4]
+[ext_resource path="res://misc/light.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 67.8078
+radius = 38.8336
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 4.44374
@@ -307,6 +308,38 @@ start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=24]
 
+[sub_resource type="Gradient" id=28]
+offsets = PoolRealArray( 0, 0.181818, 0.323636, 1 )
+colors = PoolColorArray( 0.67451, 0.196078, 0.196078, 0, 1, 0.160784, 0.160784, 1, 0.67451, 0.196078, 0.196078, 1, 0.67451, 0.196078, 0.196078, 0 )
+
+[sub_resource type="GradientTexture" id=29]
+gradient = SubResource( 28 )
+
+[sub_resource type="Curve" id=25]
+_data = [ Vector2( 0.0115942, 0 ), 0.0, 6.90177, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=26]
+curve = SubResource( 25 )
+
+[sub_resource type="ParticlesMaterial" id=27]
+emission_shape = 1
+emission_sphere_radius = 12.77
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 41.9
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 6.9
+linear_accel_random = 1.0
+radial_accel = 3.45
+radial_accel_random = 1.0
+angle = 58.0
+angle_random = 1.0
+scale = 2.0
+scale_curve = SubResource( 26 )
+color_ramp = SubResource( 29 )
+
 [node name="Person" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
@@ -334,11 +367,17 @@ collision_mask = 2
 [node name="SpreadRadius" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -24.572, -33.5876 )
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1.69405 )
 rotation = 1.5708
 shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/IdleDown = SubResource( 3 )
@@ -356,3 +395,18 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 24 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( 0, 0 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+visible = false
+position = Vector2( 0, -38.9793 )
+lifetime = 2.0
+randomness = 1.0
+process_material = SubResource( 27 )
+
+[node name="Light2D" type="Light2D" parent="."]
+visible = false
+position = Vector2( 0.350781, -39.5405 )
+scale = Vector2( 0.267124, 0.26278 )
+texture = ExtResource( 5 )
+color = Color( 1, 0.160784, 0.160784, 1 )
+energy = 0.5

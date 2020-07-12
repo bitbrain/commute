@@ -62,7 +62,7 @@ position = Vector2( -371.79, 655.467 )
 remote_path = NodePath("../../../../Camera2D")
 
 [node name="Pedestrian3" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( -187.542, 751.027 )
+position = Vector2( -187.917, 751.027 )
 
 [node name="Pedestrian5" parent="Objects/People" instance=ExtResource( 6 )]
 position = Vector2( 561.197, 733.307 )
@@ -88,7 +88,7 @@ position = Vector2( 108.748, 742.412 )
 has_mask = false
 
 [node name="Pedestrian14" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 202.392, 589.21 )
+position = Vector2( 203.141, 588.836 )
 has_mask = false
 
 [node name="Pedestrian15" parent="Objects/People" instance=ExtResource( 6 )]
@@ -141,6 +141,7 @@ has_mask = false
 
 [node name="Pedestrian" parent="Objects/People" instance=ExtResource( 6 )]
 position = Vector2( -164.675, 621.495 )
+infected = false
 
 [node name="Lights" type="YSort" parent="Objects"]
 __meta__ = {
@@ -271,5 +272,6 @@ margin_bottom = 40.0
 [connection signal="tween_started" from="Objects/Train/TrainArriveTween" to="." method="_on_TrainArriveTween_tween_started"]
 [connection signal="tween_completed" from="Objects/Train/TrainLeaveTween" to="." method="_on_TrainLeaveTween_tween_completed"]
 [connection signal="on_health_percentage_changed" from="Objects/People/Player" to="UI" method="_on_Player_on_health_percentage_changed"]
+[connection signal="on_player_infected" from="Objects/People/Player" to="." method="_on_Player_on_player_infected"]
 
 [editable path="Objects/People/Player"]

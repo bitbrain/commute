@@ -4,11 +4,13 @@ export var ACCELERATION = 300
 export var FRICTION = 450
 export var MAX_SPEED = 60
 
-export var infected = false
+export var infected = false setget set_infected
 export var has_mask = true setget set_has_mask
 
 export(Vector2) var direction = Vector2.UP
 
+onready var particles = $Particles2D
+onready var light = $Light2D
 onready var sprite = $Sprite
 onready var face_mask = $FaceMask
 onready var animation_tree = $AnimationTree
@@ -23,14 +25,28 @@ func _ready():
 	
 	animation_tree.set("parameters/Idle/blend_position", direction.normalized())
 	animation_tree.set("parameters/Walk/blend_position", direction.normalized())
+	
+	particles.visible = infected && !has_mask
+	light.visible = infected && !has_mask
 
 func is_infected():
 	return infected
+	
+func has_mask():
+	return has_mask
+	
+func set_infected(inf):
+	infected = inf
+	if particles != null && light != null:
+		particles.visible = infected && !has_mask
+		light.visible = infected && !has_mask
 
 func set_has_mask(has):
 	has_mask = has
 	if face_mask != null:
 		face_mask.visible = has_mask
+		particles.visible = infected && !has_mask
+		light.visible = infected && !has_mask
 		
 func _process(delta):
 	move_state(delta)
