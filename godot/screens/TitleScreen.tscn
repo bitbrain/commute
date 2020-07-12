@@ -4,7 +4,7 @@
 [ext_resource path="res://Main.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/m23.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://TileSet.tres" type="TileSet" id=4]
-[ext_resource path="res://person/Person.tscn" type="PackedScene" id=5]
+[ext_resource path="res://person/Pedestrian.tscn" type="PackedScene" id=5]
 [ext_resource path="res://tube/ambience.ogg" type="AudioStream" id=6]
 [ext_resource path="res://carriage/Train.tscn" type="PackedScene" id=7]
 [ext_resource path="res://misc/ambient.png" type="Texture" id=8]
@@ -70,30 +70,38 @@ autoplay = true
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="Person" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 77.4618, 277.561 )
-has_mask = false
-
-[node name="Person2" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 103.215, 298.898 )
-
-[node name="Person3" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 125.604, 273.777 )
-direction = Vector2( 1, 0 )
-
-[node name="Person4" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 461.331, 304.47 )
-
-[node name="Person5" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 498.751, 277.561 )
-direction = Vector2( 1, 0 )
-
-[node name="Person6" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 359.583, 278.402 )
-direction = Vector2( -1, 0 )
-
 [node name="Train" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 457.587, 238.202 )
+
+[node name="Pedestrian" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 48.0082, 287.058 )
+
+[node name="Person" parent="YSort/Pedestrian" index="0"]
+direction = Vector2( 0, -1 )
+
+[node name="Pedestrian2" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 169.841, 271.977 )
+
+[node name="Person" parent="YSort/Pedestrian2" index="0"]
+direction = Vector2( 0, -1 )
+
+[node name="Pedestrian3" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 395.252, 268.406 )
+
+[node name="Pedestrian4" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 428.588, 273.168 )
+
+[node name="Person" parent="YSort/Pedestrian4" index="0"]
+direction = Vector2( 1, 0 )
+
+[node name="Pedestrian5" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -116.685, 264.437 )
+
+[node name="Pedestrian7" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 120.632, 301.344 )
+
+[node name="Person" parent="YSort/Pedestrian7" index="0"]
+direction = Vector2( -1, 0 )
 
 [node name="AmbientLight" type="Light2D" parent="."]
 position = Vector2( 299.828, 172.692 )
@@ -178,3 +186,11 @@ autoplay = true
 [connection signal="tween_completed" from="CanvasLayer/Press Key/FadeInTween" to="CanvasLayer/Press Key" method="_on_FadeInTween_tween_completed"]
 [connection signal="tween_completed" from="CanvasLayer/Press Key/FadeOutTween" to="CanvasLayer/Press Key" method="_on_FadeOutTween_tween_completed"]
 [connection signal="tween_completed" from="CanvasLayer/Overlay/FadeInTween" to="CanvasLayer/Overlay" method="_on_FadeInTween_tween_completed"]
+
+[editable path="YSort/Pedestrian"]
+
+[editable path="YSort/Pedestrian2"]
+
+[editable path="YSort/Pedestrian4"]
+
+[editable path="YSort/Pedestrian7"]
