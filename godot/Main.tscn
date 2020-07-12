@@ -170,7 +170,7 @@ position = Vector2( 961.606, 737.975 )
 position = Vector2( 1020.79, 736.851 )
 
 [node name="Pedestrian13" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 1137.07, 609.462 )
+position = Vector2( 1123.84, 625.841 )
 has_mask = false
 
 [node name="Pedestrian22" parent="Objects/People" instance=ExtResource( 6 )]
