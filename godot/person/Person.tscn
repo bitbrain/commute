@@ -7,7 +7,7 @@
 [ext_resource path="res://misc/light.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 33.7123
+radius = 31.883
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 4.44374
