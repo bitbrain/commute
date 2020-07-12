@@ -21,7 +21,7 @@ margin_left = 2.0
 margin_right = 575.0
 margin_bottom = 323.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 0.160784, 0.160784, 1 )
+custom_colors/font_color = Color( 0.67451, 0.196078, 0.196078, 1 )
 custom_constants/line_spacing = 0
 text = "YOU MADE IT TO YOUR INTERVIEW IN TIME.
 
