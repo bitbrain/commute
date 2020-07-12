@@ -24,12 +24,8 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("exit"):
-		get_tree().quit(0)
-	
-	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	player.input_vector = input_vector
-
+		#get_tree().quit(0)
+		player.reset()
 
 func _on_TrainArriveTween_tween_completed(object, key):
 	train_arrive_tween.stop_all()

@@ -1,13 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://TileSet.tres" type="TileSet" id=1]
-[ext_resource path="res://person/Person.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Main.gd" type="Script" id=3]
 [ext_resource path="res://misc/light.png" type="Texture" id=4]
 [ext_resource path="res://misc/ambient.png" type="Texture" id=5]
 [ext_resource path="res://person/Pedestrian.tscn" type="PackedScene" id=6]
 [ext_resource path="res://carriage/Train.tscn" type="PackedScene" id=7]
 [ext_resource path="res://tube/ambience.ogg" type="AudioStream" id=8]
+[ext_resource path="res://UI.gd" type="Script" id=9]
+[ext_resource path="res://ui/InfectionBar.tscn" type="PackedScene" id=10]
 [ext_resource path="res://tube/train-sounds.ogg" type="AudioStream" id=11]
 
 [node name="Main" type="Node2D"]
@@ -33,6 +35,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Camera2D" type="Camera2D" parent="Objects"]
+position = Vector2( -371.79, 655.467 )
+current = true
+smoothing_enabled = true
+smoothing_speed = 3.0
+
 [node name="Train" parent="Objects" instance=ExtResource( 7 )]
 position = Vector2( -331.166, 834.358 )
 scale = Vector2( -1, 1 )
@@ -46,6 +54,12 @@ stream = ExtResource( 11 )
 volume_db = -20.0
 
 [node name="People" type="YSort" parent="Objects"]
+
+[node name="Player" parent="Objects/People" instance=ExtResource( 2 )]
+position = Vector2( -371.79, 655.467 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Objects/People/Player/Person" index="7"]
+remote_path = NodePath("../../../../Camera2D")
 
 [node name="Pedestrian3" parent="Objects/People" instance=ExtResource( 6 )]
 position = Vector2( -187.542, 751.027 )
@@ -124,20 +138,6 @@ position = Vector2( 998.115, 735.862 )
 [node name="Pedestrian23" parent="Objects/People" instance=ExtResource( 6 )]
 position = Vector2( 469.84, 614.682 )
 has_mask = false
-
-[node name="Player" parent="Objects/People" instance=ExtResource( 2 )]
-position = Vector2( -365.646, 662.056 )
-has_mask = false
-direction = Vector2( 1, 0 )
-
-[node name="Camera2D" type="Camera2D" parent="Objects/People/Player"]
-position = Vector2( -0.839569, 0.0581207 )
-current = true
-smoothing_enabled = true
-smoothing_speed = 2.0
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Pedestrian" parent="Objects/People" instance=ExtResource( 6 )]
 position = Vector2( -164.675, 621.495 )
@@ -256,6 +256,20 @@ position = Vector2( 1338.29, -82.8528 )
 stream = ExtResource( 8 )
 volume_db = -20.0
 autoplay = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource( 9 )
+
+[node name="HealthBar" parent="UI" instance=ExtResource( 10 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_top = 40.0
+margin_right = -40.0
+margin_bottom = 40.0
 [connection signal="tween_completed" from="Objects/Train/TrainArriveTween" to="." method="_on_TrainArriveTween_tween_completed"]
 [connection signal="tween_started" from="Objects/Train/TrainArriveTween" to="." method="_on_TrainArriveTween_tween_started"]
 [connection signal="tween_completed" from="Objects/Train/TrainLeaveTween" to="." method="_on_TrainLeaveTween_tween_completed"]
+[connection signal="on_health_percentage_changed" from="Objects/People/Player" to="UI" method="_on_Player_on_health_percentage_changed"]
+
+[editable path="Objects/People/Player"]
