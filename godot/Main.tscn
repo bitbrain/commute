@@ -16,47 +16,47 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 129.31, -11.5909, 0, 0, 0, 0, 154.323, -75.7744, 0, 0, 0, 0, 103.826, -53.3574, 0, 0, 0, 0, -93.9161, -54.0653 )
+"points": PoolVector2Array( 0, 0, 0, 0, 163.336, -88.1775, 0, 0, 0, 0, 152.392, -162.26, 0, 0, 0, 0, 64.2786, -31.2125, 0, 0, 0, 0, -25.5183, -94.9122 )
 }
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -37.5558, -1.29095, 0, 0, 0, 0, 177.691, -50.9403, 0, 0, 0, 0, -49.4479, -55.3999, 0, 0, 0, 0, 169.366, 17.7363, 0, 0, 0, 0, 218.124, -132.104 )
+"points": PoolVector2Array( 0, 0, 0, 0, -37.5558, -1.29095, 0, 0, 0, 0, 55.9187, -38.049, 0, 0, 0, 0, 190.57, -24.8348, 0, 0, 0, 0, 303.489, -128.661 )
 }
 
 [sub_resource type="Curve2D" id=3]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -202.839, -10.3422, 0, 0, 0, 0, 52.2456, -13.0179, 0, 0, 0, 0, -205.812, 35.7396, 0, 0, 0, 0, 4.81128, -29.8605 )
+"points": PoolVector2Array( 0, 0, 0, 0, -194.827, 48.0309, 0, 0, 0, 0, 18.9867, 41.3496, 0, 0, 0, 0, 50.3671, -13.0237 )
 }
 
 [sub_resource type="Curve2D" id=4]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -2.97131, 9.16476, 0, 0, 0, 0, 0.672607, 227.678, 0, 0, 0, 0, -28.5874, 54.005, 0, 0, 0, 0, -23.8682, -332.983, 0, 0, 0, 0, -116.368, -433.034, 0, 0, 0, 0, -317.413, -438.697 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0.672607, 227.678, 0, 0, 0, 0, -7.18518, -444.602, 0, 0, 0, 0, -646.571, -443.542 )
 }
 
 [sub_resource type="Curve2D" id=5]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -248.86, -26.2236, 0, 0, 0, 0, -51.5255, -11.9692, 0, 0, 0, 0, 27.7644, -74.3321, 0, 0, 0, 0, -145.961, -148.722, 0, 0, 0, 0, -482.275, -140.259, 0, 0, 0, 0, -701.603, -19.9218, 0, 0, 0, 0, -883.032, -141.504, 0, 0, 0, 0, -1173.44, -141.504 )
+"points": PoolVector2Array( 0, 0, 0, 0, -0.438599, -21.2495, 0, 0, 0, 0, 3.34546, -124.259, 0, 0, 0, 0, -1173.44, -141.504 )
 }
 
 [sub_resource type="Curve2D" id=6]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 63.9604, -4.54834, 0, 0, 0, 0, -6.91016, 56.8728, 0, 0, 0, 0, 37.5021, 148.217, 0, 0, 0, 0, 91.9937, 74.5117, 0, 0, 0, 0, 66.7952, 1.12134 )
+"points": PoolVector2Array( 0, 0, 0, 0, 63.9604, -4.54834, 0, 0, 0, 0, 2.83972, 12.1642, 0, 0, 0, 0, -18.8793, 128.97, 0, 0, 0, 0, 101.37, 123.408 )
 }
 
 [sub_resource type="Curve2D" id=7]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -37.1483, 49.3133, 0, 0, 0, 0, -9.42999, 3.95612, 0, 0, 0, 0, 22.698, 50.8882, 0, 0, 0, 0, 8.20889, 150.422, 0, 0, 0, 0, -28.6438, 69.787, 0, 0, 0, 0, 5.77866, -16.7082 )
+"points": PoolVector2Array( 0, 0, 0, 0, 8.20889, 150.422, 0, 0, 0, 0, 26.7959, 69.1754, 0, 0, 0, 0, 5.77866, -16.7082 )
 }
 
 [sub_resource type="Curve2D" id=8]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 59.7106, 4.47083, 0, 0, 0, 0, 60.8998, -89.7738, 0, 0, 0, 0, 97.7653, -70.1519, 0, 0, 0, 0, 17.4938, 79.6882, 0, 0, 0, 0, 124.522, 77.9044, 0, 0, 0, 0, -251.517, 68.2764 )
+"points": PoolVector2Array( 0, 0, 0, 0, -55.4353, -95.9345, 0, 0, 0, 0, -75.2567, 61.4565, 0, 0, 0, 0, 39.896, 14.2628, 0, 0, 0, 0, 60.8972, -97.3503 )
 }
 
 [sub_resource type="Curve2D" id=9]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -86.2172, -0.40033, 0, 0, 0, 0, 53.2173, 0.788879, 0, 0, 0, 0, 56.785, -56.8877, 0, 0, 0, 0, -203.651, -59.2661, 0, 0, 0, 0, -185.219, 64.4114, 0, 0, 0, 0, 39.2442, 59.06 )
+"points": PoolVector2Array( 0, 0, 0, 0, -118.759, 91.2118, 0, 0, 0, 0, -101.74, -62.9622, 0, 0, 0, 0, 56.785, -56.8877, 0, 0, 0, 0, 29.0742, 0.108948, 0, 0, 0, 0, -49.6814, 97.886 )
 }
 
 [sub_resource type="Curve2D" id=10]
@@ -86,16 +86,6 @@ tile_data = PoolIntArray( -1179613, 9, 0, -1179612, 9, 0, -1179611, 9, 0, -11796
 [node name="CoughingMachine" parent="." instance=ExtResource( 13 )]
 
 [node name="Objects" type="YSort" parent="."]
-
-[node name="AmbientLight" type="Light2D" parent="Objects"]
-position = Vector2( 494.713, 320.224 )
-scale = Vector2( 11.4656, 8.4605 )
-texture = ExtResource( 5 )
-energy = 0.7
-mode = 2
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Camera2D" type="Camera2D" parent="Objects"]
 position = Vector2( -390.752, 648.013 )
@@ -145,11 +135,13 @@ has_mask = false
 position = Vector2( 344.474, 695.885 )
 
 [node name="Pedestrian9" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 759.609, 716.909 )
+position = Vector2( 758.717, 716.909 )
 has_mask = false
 path_resource = NodePath("Path2D")
 
 [node name="Path2D" type="Path2D" parent="Objects/People/Pedestrian9"]
+position = Vector2( 0.242447, 0 )
+scale = Vector2( 0.998888, 1 )
 curve = SubResource( 2 )
 
 [node name="Pedestrian10" parent="Objects/People" instance=ExtResource( 6 )]
@@ -209,7 +201,7 @@ position = Vector2( 301.502, 742.433 )
 infected = false
 
 [node name="Pedestrian20" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 710.297, 629.639 )
+position = Vector2( 693.081, 628.05 )
 infected = false
 
 [node name="Pedestrian21" parent="Objects/People" instance=ExtResource( 6 )]
@@ -262,11 +254,8 @@ path_resource = NodePath("Path2D")
 [node name="Path2D" type="Path2D" parent="Objects/People/Pedestrian2"]
 curve = SubResource( 8 )
 
-[node name="Path2D2" type="Path2D" parent="Objects/People/Pedestrian2"]
-curve = SubResource( 8 )
-
 [node name="Pedestrian4" parent="Objects/People" instance=ExtResource( 6 )]
-position = Vector2( 265.818, 659.847 )
+position = Vector2( 266.083, 660.377 )
 has_mask = false
 path_resource = NodePath("Path2D")
 
@@ -426,6 +415,14 @@ __meta__ = {
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource( 9 )
+
+[node name="AmbientLight" type="Light2D" parent="UI"]
+visible = false
+position = Vector2( 307.816, 156.45 )
+scale = Vector2( 2.66076, 1.6792 )
+texture = ExtResource( 5 )
+energy = 0.7
+mode = 2
 
 [node name="HealthBar" parent="UI" instance=ExtResource( 10 )]
 anchor_left = 1.0

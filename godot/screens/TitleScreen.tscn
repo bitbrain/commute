@@ -114,6 +114,8 @@ __meta__ = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2( 0, 5000 )
+transform = Transform2D( 1, 0, 0, 1, 0, 5000 )
 
 [node name="Title" type="Label" parent="CanvasLayer"]
 margin_left = 2.26135

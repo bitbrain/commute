@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://person/person.png" type="Texture" id=1]
 [ext_resource path="res://person/Person.gd" type="Script" id=2]
@@ -308,37 +308,12 @@ start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=24]
 
+[sub_resource type="Curve" id=26]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.088015, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
 [sub_resource type="Gradient" id=25]
-offsets = PoolRealArray( 0, 0.181818, 0.323636, 1 )
-colors = PoolColorArray( 0.67451, 0.196078, 0.196078, 0, 1, 0.160784, 0.160784, 1, 0.67451, 0.196078, 0.196078, 1, 0.67451, 0.196078, 0.196078, 0 )
-
-[sub_resource type="GradientTexture" id=26]
-gradient = SubResource( 25 )
-
-[sub_resource type="Curve" id=27]
-_data = [ Vector2( 0.0115942, 0 ), 0.0, 6.90177, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=28]
-curve = SubResource( 27 )
-
-[sub_resource type="ParticlesMaterial" id=29]
-emission_shape = 1
-emission_sphere_radius = 12.77
-flag_disable_z = true
-direction = Vector3( 0, 1, 0 )
-spread = 41.9
-gravity = Vector3( 0, 0, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 6.9
-linear_accel_random = 1.0
-radial_accel = 3.45
-radial_accel_random = 1.0
-angle = 58.0
-angle_random = 1.0
-scale = 2.0
-scale_curve = SubResource( 28 )
-color_ramp = SubResource( 26 )
+offsets = PoolRealArray( 0, 0.0915129, 1 )
+colors = PoolColorArray( 1, 0, 0, 0, 1, 0, 0, 0.908487, 1, 0, 0, 0 )
 
 [node name="Person" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -351,13 +326,11 @@ texture = ExtResource( 3 )
 position = Vector2( 1.06066, -20.7713 )
 texture = ExtResource( 1 )
 hframes = 24
-frame = 23
 
 [node name="FaceMask" type="Sprite" parent="."]
 position = Vector2( 1.061, -20.771 )
 texture = ExtResource( 4 )
 hframes = 24
-frame = 23
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 24.572, -5.39169 )
@@ -393,12 +366,25 @@ parameters/playback = SubResource( 24 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( 0, 0 )
 
-[node name="Particles2D" type="Particles2D" parent="."]
+[node name="Particles2D" type="CPUParticles2D" parent="."]
 visible = false
 position = Vector2( 0, -38.9793 )
 lifetime = 2.0
 randomness = 1.0
-process_material = SubResource( 29 )
+emission_shape = 1
+emission_sphere_radius = 10.0
+gravity = Vector2( 0, 0 )
+angular_velocity_random = 1.0
+orbit_velocity_random = 1.0
+linear_accel = 0.1
+linear_accel_random = 1.0
+radial_accel = 1.0
+radial_accel_random = 1.0
+tangential_accel = 1.0
+tangential_accel_random = 1.0
+scale_amount = 1.5
+scale_amount_curve = SubResource( 26 )
+color_ramp = SubResource( 25 )
 
 [node name="Light2D" type="Light2D" parent="."]
 visible = false
