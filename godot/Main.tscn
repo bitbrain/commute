@@ -1,10 +1,9 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Main.gd" type="Script" id=3]
 [ext_resource path="res://misc/light.png" type="Texture" id=4]
-[ext_resource path="res://misc/ambient.png" type="Texture" id=5]
 [ext_resource path="res://person/Pedestrian.tscn" type="PackedScene" id=6]
 [ext_resource path="res://carriage/Train.tscn" type="PackedScene" id=7]
 [ext_resource path="res://tube/ambience.ogg" type="AudioStream" id=8]
@@ -413,16 +412,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="CanvasModulate" type="CanvasModulate" parent="WinningArea"]
+color = Color( 0.0941176, 0.145098, 0.121569, 1 )
+
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource( 9 )
-
-[node name="AmbientLight" type="Light2D" parent="UI"]
-visible = false
-position = Vector2( 307.816, 156.45 )
-scale = Vector2( 2.66076, 1.6792 )
-texture = ExtResource( 5 )
-energy = 0.7
-mode = 2
 
 [node name="HealthBar" parent="UI" instance=ExtResource( 10 )]
 anchor_left = 1.0

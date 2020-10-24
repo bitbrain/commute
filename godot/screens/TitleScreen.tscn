@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://screens/MenuScreen.gd" type="Script" id=1]
 [ext_resource path="res://Main.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://person/Pedestrian.tscn" type="PackedScene" id=5]
 [ext_resource path="res://tube/ambience.ogg" type="AudioStream" id=6]
 [ext_resource path="res://carriage/Train.tscn" type="PackedScene" id=7]
-[ext_resource path="res://misc/ambient.png" type="Texture" id=8]
 [ext_resource path="res://tube/train-sounds.ogg" type="AudioStream" id=9]
 [ext_resource path="res://carriage/TrainController.gd" type="Script" id=10]
 [ext_resource path="res://ui/info_label.gd" type="Script" id=11]
@@ -103,16 +102,6 @@ position = Vector2( 120.632, 301.344 )
 [node name="Person" parent="YSort/Pedestrian7" index="0"]
 direction = Vector2( -1, 0 )
 
-[node name="AmbientLight" type="Light2D" parent="."]
-position = Vector2( 299.828, 172.692 )
-scale = Vector2( 4.73295, 2.55609 )
-texture = ExtResource( 8 )
-energy = 0.7
-mode = 2
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Title" type="Label" parent="CanvasLayer"]
@@ -180,6 +169,9 @@ __meta__ = {
 stream = ExtResource( 13 )
 volume_db = -20.0
 autoplay = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.156863, 0.227451, 0.196078, 1 )
 [connection signal="tween_completed" from="TrainController/TrainArriveTween" to="TrainController" method="_on_TrainArriveTween_tween_completed"]
 [connection signal="tween_started" from="TrainController/TrainArriveTween" to="TrainController" method="_on_TrainArriveTween_tween_started"]
 [connection signal="tween_completed" from="TrainController/TrainLeaveTween" to="TrainController" method="_on_TrainLeaveTween_tween_completed"]
